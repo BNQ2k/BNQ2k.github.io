@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KIVIGYM</title>
+    <link rel="stylesheet" href="/src/css/forms.css">
+  </head>
+
+    <div class="auth-container">
+
+      <section class="auth-card">
+        <h3>Kirjaudu sisään</h3>
+        <form class="loginForm">
+          <div class="input-group">
+            <label for="login-username">Username</label>
+            <input id="login-username" type="text" name="username" placeholder="Käyttäjätunnus" required />
+          </div>
+          <div class="input-group">
+            <label for="login-password">Password</label>
+            <input id="login-password" type="password" name="password" placeholder="Salasana" required />
+          </div>
+          <input type="submit" value="Kirjaudu" class="loginform btn-primary" />
+        </form>
+        <div id="loginResponse"></div>
+      </section>
+
+      <section class="auth-card">
+        <h3>Luo uusi tunnus</h3>
+        <p class="helper-text">Liity KIVIGYM-jäseneksi</p>
+        <form class="registerForm">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" name="username" placeholder="Käyttäjätunnus" required />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" placeholder="Salasana" required />
+          </div>
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="Sähköpostiosoite" required />
+          </div>
+          <input name="submit" type="submit" value="Luo uusi tunnus" class="postuser btn-secondary" />
+        </form>
+      </section>
+
+      <details class="debug-section">
+        <summary>TEKNISET</summary>
+        <div class="debug-content">
+          <pre><code># Login API: POST /api/users/login</code></pre>
+          <button id="meRequest">Testaa Token</button>
+          <div id="meResponse"></div>
+          <hr />
+          <button id="clearButton">clear localStorage</button>
+          <code id="clearResponse"></code>
+        </div>
+      </details>
+
+    </div>
+  </body>
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/login.js"></script>
+</html>

@@ -1,0 +1,39 @@
+.env
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+.venv
+log.html
+report.html
+playwright-log.txt
+.venv/
+*.json
+*.key
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ignoroi vain sensitiiviset tiedostot tests-kansiossa
+tests/front/private_key.pvk
+
+# Outputs: ignoroi binäärit mutta salli HTML-raportit
+outputs/*.xml
+!outputs/*.html
+outputs/browser/

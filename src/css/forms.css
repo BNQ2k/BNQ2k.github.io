@@ -1,0 +1,14 @@
+*:focus { outline: 3px solid white; }
+p::first-letter { font-size: 40px; }
+::placeholder { color: lightseagreen; font-weight: 800; }
+
+body { font-family: sans-serif; padding: 20px;  }
+.container { max-width: 400px; margin: auto; }
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+input { padding: 10px; border: 1px solid whitesmoke; border-radius: 4px; }
+details { margin-top: 20px; color: gray; }

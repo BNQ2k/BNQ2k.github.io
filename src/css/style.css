@@ -1,0 +1,281 @@
+/* @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 1em;
+}
+
+nav,
+header,
+main {
+  max-width: 2000px;
+  margin: auto;
+}
+
+.black_cl {
+  color: rgba(24, 31, 37, 1);
+}
+.bolder {
+  font-weight: bolder;
+}
+.light_font {
+  color: rgb(202, 202, 202);
+}
+.main_cl {
+  color: rgb(255, 190, 61);
+}
+.fl {
+  float: left;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.fd-col {
+  flex-direction: column;
+}
+
+nav {
+  background-color: rgb(30, 39, 46);
+  color: #fff;
+  padding: 0.5rem 4rem;
+  font-weight: 100;
+  font-size: 1.2em;
+  box-shadow: 0 8px 16px -6px black;
+  height: 100px;
+  max-width: none;
+  width: 100%;
+}
+
+nav ul {
+  padding-top: 20px;
+  list-style-type: none;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav ul li:first-child a {
+  background-color: rgb(65 77 159);
+  background-image: linear-gradient(45deg, rgb(255, 153, 0), rgb(199, 199, 199));
+
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  font-size: larger;
+  font-weight: 900;
+  margin-right: 40px;
+}
+
+nav ul a {
+  color: rgb(197, 197, 197);
+  padding: 3rem;
+  margin: 0 0.25em;
+  font-size: smaller;
+  transition: color 0.3s;
+}
+
+nav ul li {
+  float: left;
+}
+nav ul li a:hover {
+  color: rgb(0, 255, 251);
+}
+
+.selected {
+  border-bottom: 1px solid var(rgb(86, 210, 216));
+  color: var(rgb(86, 210, 216));
+}
+
+/* herokuva */
+#taustakuva {
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  height: 300px;
+  background-color: rgb(0, 0, 0);
+  background-image: url(/images/capytsym_background.jpg);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+
+.info-area {
+  margin-top: 50px;
+}
+
+#info-text {
+  text-align: center;
+  font-size: 2em;
+}
+
+.about-us {
+  min-height: 400px;
+  background-image: url(/images/capytsym_background.jpg);
+  padding: 80px;
+  position: relative;
+  margin-top: 50px;
+}
+
+
+
+.about-us h2 {
+  color: orange;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.about-us p {
+  color: rgb(255, 255, 255);
+  line-height: 1.8;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-style: bold;
+}
+.about-us p {
+  margin-bottom: 15px;
+}
+.card-inside {
+  margin-right: 50px;
+  margin-bottom: 30px;
+  max-width: 60%;
+  border-radius: 20px;
+}
+
+/*********************/
+/* Dialog */
+dialog {
+  margin: auto;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(255, 153, 0, 0.2);
+  width: 600px;
+  margin: 50px auto;
+  padding: 50px;
+}
+
+.card p {
+  margin-top: 15px;
+}
+
+
+label {
+  display: block;
+}
+
+input[type='text'] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: rgb(30, 39, 46);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.btn:hover,
+a:hover {
+  opacity: 0.7;
+}
+
+tbody {
+  background-color: #fff;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+.lowBmi {
+  background-color: lightblue;
+}
+.normalBmi {
+  background-color: lightgreen;
+}
+.highBmi {
+  background-color: red;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding-top: 40px;
+  background-color: rgb(30, 39, 46);
+  height: 100px;
+  margin-top: 50px;
+  color: whitesmoke;
+}
+
+/* Breakpointit tänne */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 600px;
+}
+
+.map {
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.map iframe {
+  max-width: 100%; /* Responsiivisuus */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#login-link:hover {
+  color: white;
+}
+#login-link:visited {
+    color: lightgreen !important;
+}
+
+#logout-btn {
+  color: red; /* huomion vuoksi */
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+#logout-btn:hover {
+  background-color: red;
+  color: white;
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on darwin)" generated="2026-04-04T18:56:26.302730" rpa="false" schemaversion="5">
+<suite id="s1" name="Tehtava5" source="/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/tests/front/tehtava5.robot">
+<test id="s1-t1" name="Kirjautuminen .env tunnuksilla" line="5">
+<kw name="Evaluate" owner="BuiltIn">
+<arg>__import__('dotenv').load_dotenv()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-04T18:56:26.438532" elapsed="0.002681"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-04T18:56:26.441513" level="INFO">${USER} = benkku</msg>
+<var>${USER}</var>
+<arg>__import__('os').getenv('envTunnus')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-04T18:56:26.441326" elapsed="0.000206"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-04T18:56:26.441753" level="INFO">${PASS} = benkku123</msg>
+<var>${PASS}</var>
+<arg>__import__('os').getenv('envSalis')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-04T18:56:26.441605" elapsed="0.000163"/>
+</kw>
+<kw name="New Browser" owner="Browser">
+<msg time="2026-04-04T18:56:26.442123" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/browser/traces/temp/7925a4c7-a6f6-49c2-a740-448e8e8026f2"}</msg>
+<msg time="2026-04-04T18:56:26.462082" level="INFO">Starting Browser process /Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/.venv/lib/python3.14/site-packages/Browser/wrapper/index.js using at 127.0.0.1:60692</msg>
+<msg time="2026-04-04T18:56:29.012862" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/browser/traces/temp/7925a4c7-a6f6-49c2-a740-448e8e8026f2"}</msg>
+<arg>chromium</arg>
+<arg>headless=No</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-04-04T18:56:26.441833" elapsed="2.571238"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-04-04T18:56:29.738125" level="INFO">Successfully initialized new page object and opened url: http://localhost:5173/login.html</msg>
+<msg time="2026-04-04T18:56:29.738195" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>http://localhost:5173/login.html</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-04-04T18:56:29.013366" elapsed="0.724927"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-04T18:56:29.739723" level="INFO">Fills the text 'benkku' in the given field.</msg>
+<arg>id=login-username</arg>
+<arg>${USER}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-04T18:56:29.738525" elapsed="0.032587"/>
+</kw>
+<kw name="Type Secret" owner="Browser">
+<arg>id=login-password</arg>
+<arg>$PASS</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given secret from ``variable_name`` into the text field
+found by ``selector``.</doc>
+<status status="PASS" start="2026-04-04T18:56:29.771329" elapsed="0.018542"/>
+</kw>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2026-04-04T18:56:29.897032" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-04T18:56:29.790310" elapsed="0.106842"/>
+</kw>
+<status status="PASS" start="2026-04-04T18:56:26.438044" elapsed="3.459229"/>
+</test>
+<status status="PASS" start="2026-04-04T18:56:26.303359" elapsed="3.596274"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tehtava5" id="s1" pass="1" fail="0" skip="0">Tehtava5</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

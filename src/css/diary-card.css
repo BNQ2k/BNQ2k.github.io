@@ -1,0 +1,91 @@
+/* Flexbox-säiliö korteille */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Yksittäinen kortti */
+.card {
+  flex: 1 1 300px;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid #4caf50;
+}
+
+/* Modaalidialogin tyylit */
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  width: 90%;
+  max-width: 500px;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.diary-card-area {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  border-left: 8px solid #4CAF50;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.card-text p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.card-text strong {
+  color: #222;
+}
+.delete-card-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.delete-card-btn:hover {
+  background-color: red;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+}
