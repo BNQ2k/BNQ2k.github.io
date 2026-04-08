@@ -122,3 +122,20 @@ Testin vaiheet:
     Älykäs syöttö: Käytetään Fill Text -avainsanaa kryptatun muuttujan kanssa. CryptoLibrary tunnistaa salauksen ja hoitaa purkamisen taustalla juuri ennen kuin teksti lähetetään HTML-elementtiin.
 
     Siivous: Selain suljetaan testin päätteeksi, vaikka testi epäonnistuisi, jotta resursseja ei jää roikkumaan.
+
+## 7. Outputs-kansio
+
+Testien loki- ja raporttitiedostot ohjataan outputs/-kansioon lisäämällä --outputdir flag:
+
+    robot --outputdir outputs tests/front/tehtava3.robot
+
+Tulostiedostot:
+- outputs/log.html
+- outputs/report.html
+- outputs/output.xml
+
+## 8. Github.io log & report on html
+
+    TESTIT:
+    - [Log](https://bnq2k.github.io/log.html)
+    - [Report](https://bnq2k.github.io/report.html)

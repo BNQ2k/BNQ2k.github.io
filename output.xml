@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.3 on darwin)" generated="2026-04-04T18:56:26.302730" rpa="false" schemaversion="5">
-<suite id="s1" name="Tehtava5" source="/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/tests/front/tehtava5.robot">
-<test id="s1-t1" name="Kirjautuminen .env tunnuksilla" line="5">
+<robot generator="Robot 7.4.2 (Python 3.14.3 on darwin)" generated="2026-04-07T18:33:29.352619" rpa="false" schemaversion="5">
+<suite id="s1" name="Tehtava6" source="/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/tests/front/tehtava6.robot">
+<test id="s1-t1" name="Kirjautuminen kryptatuilla tunnuksilla" line="6">
 <kw name="Evaluate" owner="BuiltIn">
 <arg>__import__('dotenv').load_dotenv()</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-04-04T18:56:26.438532" elapsed="0.002681"/>
+<status status="PASS" start="2026-04-07T18:33:29.600274" elapsed="0.002259"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-04-04T18:56:26.441513" level="INFO">${USER} = benkku</msg>
-<var>${USER}</var>
-<arg>__import__('os').getenv('envTunnus')</arg>
+<msg time="2026-04-07T18:33:29.602935" level="INFO">${ENC_USER} = crypt:vxpDfYJV6+mwYJcB2HXEwcAOE2q6Yw5zk/hZRlqQKg/Hh+2c8kHl0irwz1Mi9+zzwWpfz8sr</msg>
+<var>${ENC_USER}</var>
+<arg>__import__('os').getenv('MY_CRYPT_USER')</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-04-04T18:56:26.441326" elapsed="0.000206"/>
+<status status="PASS" start="2026-04-07T18:33:29.602696" elapsed="0.000262"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-04-04T18:56:26.441753" level="INFO">${PASS} = benkku123</msg>
-<var>${PASS}</var>
-<arg>__import__('os').getenv('envSalis')</arg>
+<msg time="2026-04-07T18:33:29.603210" level="INFO">${ENC_PASS} = crypt:QnJZ2vmhQItp/xX8c3/GYzvvu4r6XrFWz1tPRnjhb08Ob1qb4n6XeiujDZKEyY6issRcwS2RU/PH</msg>
+<var>${ENC_PASS}</var>
+<arg>__import__('os').getenv('MY_CRYPT_PASS')</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-04-04T18:56:26.441605" elapsed="0.000163"/>
+<status status="PASS" start="2026-04-07T18:33:29.603044" elapsed="0.000184"/>
 </kw>
 <kw name="New Browser" owner="Browser">
-<msg time="2026-04-04T18:56:26.442123" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/browser/traces/temp/7925a4c7-a6f6-49c2-a740-448e8e8026f2"}</msg>
-<msg time="2026-04-04T18:56:26.462082" level="INFO">Starting Browser process /Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/.venv/lib/python3.14/site-packages/Browser/wrapper/index.js using at 127.0.0.1:60692</msg>
-<msg time="2026-04-04T18:56:29.012862" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/browser/traces/temp/7925a4c7-a6f6-49c2-a740-448e8e8026f2"}</msg>
+<msg time="2026-04-07T18:33:29.603628" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/browser/traces/temp/6cfbc3b6-ce6e-4766-ac5d-fac4152a85e8"}</msg>
+<msg time="2026-04-07T18:33:29.628256" level="INFO">Starting Browser process /Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/.venv/lib/python3.14/site-packages/Browser/wrapper/index.js using at 127.0.0.1:55593</msg>
+<msg time="2026-04-07T18:33:31.490228" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/browser/traces/temp/6cfbc3b6-ce6e-4766-ac5d-fac4152a85e8"}</msg>
 <arg>chromium</arg>
 <arg>headless=No</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2026-04-04T18:56:26.441833" elapsed="2.571238"/>
+<status status="PASS" start="2026-04-07T18:33:29.603305" elapsed="1.887727"/>
 </kw>
 <kw name="New Page" owner="Browser">
-<msg time="2026-04-04T18:56:29.738125" level="INFO">Successfully initialized new page object and opened url: http://localhost:5173/login.html</msg>
-<msg time="2026-04-04T18:56:29.738195" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<msg time="2026-04-07T18:33:31.935316" level="INFO">Successfully initialized new page object and opened url: http://localhost:5173/login.html</msg>
+<msg time="2026-04-07T18:33:31.935576" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
 <arg>http://localhost:5173/login.html</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2026-04-04T18:56:29.013366" elapsed="0.724927"/>
+<status status="PASS" start="2026-04-07T18:33:31.491767" elapsed="0.444246"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2026-04-04T18:56:29.739723" level="INFO">Fills the text 'benkku' in the given field.</msg>
+<msg time="2026-04-07T18:33:31.937845" level="INFO">Fills the text 'crypt:vxpDfYJV6+mwYJcB2HXEwcAOE2q6Yw5zk/hZRlqQKg/Hh+2c8kHl0irwz1Mi9+zzwWpfz8sr' in the given field.</msg>
 <arg>id=login-username</arg>
-<arg>${USER}</arg>
+<arg>${ENC_USER}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2026-04-04T18:56:29.738525" elapsed="0.032587"/>
+<status status="PASS" start="2026-04-07T18:33:31.936596" elapsed="0.027607"/>
 </kw>
-<kw name="Type Secret" owner="Browser">
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-07T18:33:31.965716" level="INFO">Fills the text 'crypt:QnJZ2vmhQItp/xX8c3/GYzvvu4r6XrFWz1tPRnjhb08Ob1qb4n6XeiujDZKEyY6issRcwS2RU/PH' in the given field.</msg>
 <arg>id=login-password</arg>
-<arg>$PASS</arg>
+<arg>${ENC_PASS}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
-<doc>Types the given secret from ``variable_name`` into the text field
-found by ``selector``.</doc>
-<status status="PASS" start="2026-04-04T18:56:29.771329" elapsed="0.018542"/>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-07T18:33:31.964612" elapsed="0.007795"/>
 </kw>
 <kw name="Close Browser" owner="Browser" type="TEARDOWN">
-<msg time="2026-04-04T18:56:29.897032" level="INFO">Closed browser</msg>
+<msg time="2026-04-07T18:33:32.082140" level="INFO">Closed browser</msg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-04-04T18:56:29.790310" elapsed="0.106842"/>
+<status status="PASS" start="2026-04-07T18:33:31.973183" elapsed="0.109100"/>
 </kw>
-<status status="PASS" start="2026-04-04T18:56:26.438044" elapsed="3.459229"/>
+<status status="PASS" start="2026-04-07T18:33:29.598878" elapsed="2.483564"/>
 </test>
-<status status="PASS" start="2026-04-04T18:56:26.303359" elapsed="3.596274"/>
+<status status="PASS" start="2026-04-07T18:33:29.353210" elapsed="2.732205"/>
 </suite>
 <statistics>
 <total>
@@ -77,7 +77,7 @@ found by ``selector``.</doc>
 <tag>
 </tag>
 <suite>
-<stat name="Tehtava5" id="s1" pass="1" fail="0" skip="0">Tehtava5</stat>
+<stat name="Tehtava6" id="s1" pass="1" fail="0" skip="0">Tehtava6</stat>
 </suite>
 </statistics>
 <errors>
