@@ -137,5 +137,6 @@ Tulostiedostot:
 ## 8. Github.io log & report on html
 
 TESTIT:
+- [Etusivu](https://bnq2k.github.io/TESTIT.html)
 - [Log](https://bnq2k.github.io/log.html)
 - [Report](https://bnq2k.github.io/report.html)
