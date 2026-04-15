@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mittaukset</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #222;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .sub {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    /* RANGE BUTTONS */
+    .range-btns {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .range-btn {
+      padding: 0.4rem 1.1rem;
+      border-radius: 20px;
+      border: 1.5px solid #ddd;
+      background: #fff;
+      font-size: 0.85rem;
+      cursor: pointer;
+      color: #555;
+      transition: all 0.15s;
+    }
+    .range-btn:hover { border-color: #aaa; }
+    .range-btn.active {
+      background: #222;
+      color: #fff;
+      border-color: #222;
+    }
+
+    /* STAT CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      border: 1.5px solid #eee;
+      border-radius: 12px;
+      padding: 1.1rem 1.2rem;
+    }
+
+    .card-label {
+      font-size: 0.72rem;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-value {
+      font-size: 1.9rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .card-unit {
+      font-size: 0.72rem;
+      color: #aaa;
+      margin-top: 0.25rem;
+    }
+
+    /* MODE TOGGLE */
+    .mode-toggle {
+      display: flex;
+      gap: 0;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      width: fit-content;
+      margin-bottom: 1.2rem;
+    }
+
+    .mode-btn {
+      padding: 0.4rem 1.2rem;
+      border: none;
+      background: #fff;
+      font-size: 0.82rem;
+      cursor: pointer;
+      color: #888;
+      transition: background 0.15s, color 0.15s;
+    }
+    .mode-btn.active { background: #222; color: #fff; }
+
+    /* METRIC CHIPS */
+    .chips {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .chip {
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      border: 1.5px solid #eee;
+      background: #fff;
+      font-size: 0.78rem;
+      cursor: pointer;
+      color: #888;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .chip .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .chip.active { border-color: #bbb; color: #222; background: #f9f9f9; }
+
+    /* CHART */
+    .chart-box {
+      border: 1.5px solid #eee;
+      border-radius: 12px;
+      padding: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .chart-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    canvas { max-height: 260px; }
+
+    .adv { display: none; }
+    body.adv-mode .adv { display: block; }
+
+    .no-data {
+      text-align: center;
+      padding: 3rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 500px) {
+      .card-value { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <h1>Mittaukset</h1>
+  <p class="sub">Kubios HRV-mittauksesi</p>
+
+  <div id="content" style="display:none">
+
+    <!-- Aikaväli -->
+    <div class="range-btns">
+      <button class="range-btn" onclick="setRange(7, this)">Viikko</button>
+      <button class="range-btn active" onclick="setRange(30, this)">Kuukausi</button>
+      <button class="range-btn" onclick="setRange(999, this)">Kaikki</button>
+    </div>
+
+    <!-- Kortit -->
+    <div class="cards">
+      <div class="card">
+        <div class="card-label">Readiness (ka)</div>
+        <div class="card-value" id="avg-readiness" style="color:#2ba87e">—</div>
+        <div class="card-unit">/ 100</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Syke (ka)</div>
+        <div class="card-value" id="avg-hr" style="color:#e08c1a">—</div>
+        <div class="card-unit">bpm</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Stressi (ka)</div>
+        <div class="card-value" id="avg-stress" style="color:#d94f4f">—</div>
+        <div class="card-unit">indeksi</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Onnellisuus (ka)</div>
+        <div class="card-value" id="avg-happiness" style="color:#4a7fd4">—</div>
+        <div class="card-unit">/ 5</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Mittauksia</div>
+        <div class="card-value" id="count">—</div>
+        <div class="card-unit">kpl</div>
+      </div>
+    </div>
+
+    <!-- Easy / Advanced -->
+    <div class="mode-toggle">
+      <button class="mode-btn active" onclick="setMode('easy', this)">Perustiedot</button>
+      <button class="mode-btn" onclick="setMode('adv', this)">Lisätiedot</button>
+    </div>
+
+    <!-- Metric chips -->
+    <div class="chips">
+      <button class="chip active" data-m="readiness" onclick="toggleChip(this)">
+        <span class="dot" style="background:#2ba87e"></span>Readiness
+      </button>
+      <button class="chip active" data-m="hr" onclick="toggleChip(this)">
+        <span class="dot" style="background:#e08c1a"></span>Syke
+      </button>
+      <button class="chip active" data-m="stress" onclick="toggleChip(this)">
+        <span class="dot" style="background:#d94f4f"></span>Stressi
+      </button>
+      <button class="chip active" data-m="happiness" onclick="toggleChip(this)">
+        <span class="dot" style="background:#4a7fd4"></span>Onnellisuus
+      </button>
+    </div>
+
+    <!-- Päächart -->
+    <div class="chart-box">
+      <div class="chart-title">Mittaukset ajan mukaan</div>
+      <canvas id="main-chart"></canvas>
+    </div>
+
+    <!-- Advanced -->
+    <div class="adv">
+      <div class="chart-box">
+        <div class="chart-title">HRV — RMSSD (ms)</div>
+        <canvas id="rmssd-chart"></canvas>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">PNS / SNS Indeksi</div>
+        <canvas id="pns-chart"></canvas>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">Hengitystaajuus (hengitystä/min)</div>
+        <canvas id="resp-chart"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="no-data" class="no-data" style="display:none">
+    Ei dataa saatavilla. Kirjaudu sisään ensin.
+  </div>
+
+  <div id="loading" class="no-data">Ladataan...</div>
+</div>
+
+<script>
+  const API = 'http://localhost:3000/api';
+  let token = localStorage.getItem('kubios_token');
+  let allData = [];
+  let currentRange = 30;
+  let activeMetrics = new Set(['readiness', 'hr', 'stress', 'happiness']);
+  let mainChart, rmssdChart, pnsChart, respChart;
+
+  const scale = {
+    x: { ticks: { color: '#aaa', font: { size: 10 } }, grid: { color: '#f0f0f0' } },
+    y: { ticks: { color: '#aaa', font: { size: 10 } }, grid: { color: '#f0f0f0' } }
+  };
+
+  async function init() {
+    if (!token) {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('no-data').style.display = 'block';
+      return;
+    }
+    try {
+      const res = await fetch(`${API}/kubios/user-data`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      const json = await res.json();
+      allData = (json.results || []).filter(r => r.result)
+        .sort((a, b) => new Date(a.measured_timestamp) - new Date(b.measured_timestamp));
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+      renderAll();
+    } catch {
+      document.getElementById('loading').textContent = 'Datan hakeminen epäonnistui.';
+    }
+  }
+
+  function getFiltered() {
+    const cutoff = new Date();
+    cutoff.setDate(cutoff.getDate() - currentRange);
+    return allData.filter(r => currentRange >= 900 || new Date(r.measured_timestamp) >= cutoff);
+  }
+
+  function lbls(data) {
+    return data.map(r => {
+      const d = new Date(r.measured_timestamp);
+      return `${d.getDate()}.${d.getMonth()+1}.`;
+    });
+  }
+
+  function avg(data, key) {
+    const vals = data.map(r => r.result[key]).filter(v => v != null);
+    return vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1) : '—';
+  }
+
+  function setRange(days, btn) {
+    currentRange = days;
+    btn.closest('.range-btns').querySelectorAll('.range-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderAll();
+  }
+
+  function setMode(mode, btn) {
+    btn.closest('.mode-toggle').querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    if (mode === 'adv') {
+      document.body.classList.add('adv-mode');
+      renderAdv(getFiltered());
+    } else {
+      document.body.classList.remove('adv-mode');
+    }
+  }
+
+  function toggleChip(btn) {
+    const m = btn.dataset.m;
+    btn.classList.toggle('active');
+    activeMetrics.has(m) ? activeMetrics.delete(m) : activeMetrics.add(m);
+    renderMain(getFiltered());
+  }
+
+  function renderAll() {
+    const data = getFiltered();
+    // stats
+    document.getElementById('avg-readiness').textContent = avg(data, 'readiness');
+    document.getElementById('avg-hr').textContent = avg(data, 'mean_hr_bpm');
+    document.getElementById('avg-stress').textContent = avg(data, 'stress_index');
+    const hap = data.map(r=>r.user_happiness).filter(v=>v!=null);
+    document.getElementById('avg-happiness').textContent = hap.length ? (hap.reduce((a,b)=>a+b,0)/hap.length).toFixed(1) : '—';
+    document.getElementById('count').textContent = data.length;
+    renderMain(data);
+    if (document.body.classList.contains('adv-mode')) renderAdv(data);
+  }
+
+  function renderMain(data) {
+    const ds = [];
+    if (activeMetrics.has('readiness')) ds.push({ label:'Readiness', data: data.map(r=>r.result.readiness?.toFixed(1)), borderColor:'#2ba87e', backgroundColor:'rgba(43,168,126,0.07)', tension:0.4, pointRadius:3, yAxisID:'y' });
+    if (activeMetrics.has('hr'))        ds.push({ label:'Syke', data: data.map(r=>r.result.mean_hr_bpm?.toFixed(1)), borderColor:'#e08c1a', backgroundColor:'rgba(224,140,26,0.07)', tension:0.4, pointRadius:3, yAxisID:'y' });
+    if (activeMetrics.has('stress'))    ds.push({ label:'Stressi', data: data.map(r=>r.result.stress_index?.toFixed(1)), borderColor:'#d94f4f', backgroundColor:'rgba(217,79,79,0.07)', tension:0.4, pointRadius:3, yAxisID:'y2' });
+    if (activeMetrics.has('happiness')) ds.push({ label:'Onnellisuus', data: data.map(r=>r.user_happiness), borderColor:'#4a7fd4', backgroundColor:'rgba(74,127,212,0.07)', tension:0.4, pointRadius:3, yAxisID:'y2' });
+    if (mainChart) mainChart.destroy();
+    mainChart = new Chart(document.getElementById('main-chart'), {
+      type: 'line',
+      data: { labels: lbls(data), datasets: ds },
+      options: {
+        responsive: true, maintainAspectRatio: true,
+        plugins: { legend: { labels: { color:'#888', font:{ size:11 }, boxWidth:12 } } },
+        scales: { x: scale.x, y: { ...scale.y, position:'left' }, y2: { ...scale.y, position:'right', grid:{ drawOnChartArea:false } } }
+      }
+    });
+  }
+
+  function renderAdv(data) {
+    if (rmssdChart) rmssdChart.destroy();
+    rmssdChart = new Chart(document.getElementById('rmssd-chart'), {
+      type: 'bar',
+      data: { labels: lbls(data), datasets: [{ data: data.map(r=>r.result.rmssd_ms?.toFixed(1)), backgroundColor:'rgba(74,127,212,0.5)', borderColor:'#4a7fd4', borderWidth:1 }] },
+      options: { responsive:true, plugins:{ legend:{display:false} }, scales: { x:scale.x, y:scale.y } }
+    });
+    if (pnsChart) pnsChart.destroy();
+    pnsChart = new Chart(document.getElementById('pns-chart'), {
+      type: 'line',
+      data: { labels: lbls(data), datasets: [
+        { label:'PNS', data: data.map(r=>r.result.pns_index?.toFixed(2)), borderColor:'#2ba87e', tension:0.4, pointRadius:3 },
+        { label:'SNS', data: data.map(r=>r.result.sns_index?.toFixed(2)), borderColor:'#d94f4f', tension:0.4, pointRadius:3 }
+      ]},
+      options: { responsive:true, plugins:{ legend:{ labels:{ color:'#888', font:{size:11}, boxWidth:12 } } }, scales:{ x:scale.x, y:scale.y } }
+    });
+    if (respChart) respChart.destroy();
+    respChart = new Chart(document.getElementById('resp-chart'), {
+      type: 'line',
+      data: { labels: lbls(data), datasets: [{ data: data.map(r=>r.result.respiratory_rate?.toFixed(1)), borderColor:'#e08c1a', backgroundColor:'rgba(224,140,26,0.07)', tension:0.4, pointRadius:3 }] },
+      options: { responsive:true, plugins:{ legend:{display:false} }, scales:{ x:scale.x, y:scale.y } }
+    });
+  }
+
+  init();
+</script>
+</body>
+</html>

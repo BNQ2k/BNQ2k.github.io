@@ -1,83 +1,296 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.3 on darwin)" generated="2026-04-07T18:33:29.352619" rpa="false" schemaversion="5">
-<suite id="s1" name="Tehtava6" source="/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/tests/front/tehtava6.robot">
-<test id="s1-t1" name="Kirjautuminen kryptatuilla tunnuksilla" line="6">
-<kw name="Evaluate" owner="BuiltIn">
-<arg>__import__('dotenv').load_dotenv()</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-04-07T18:33:29.600274" elapsed="0.002259"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-04-07T18:33:29.602935" level="INFO">${ENC_USER} = crypt:vxpDfYJV6+mwYJcB2HXEwcAOE2q6Yw5zk/hZRlqQKg/Hh+2c8kHl0irwz1Mi9+zzwWpfz8sr</msg>
-<var>${ENC_USER}</var>
-<arg>__import__('os').getenv('MY_CRYPT_USER')</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-04-07T18:33:29.602696" elapsed="0.000262"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-04-07T18:33:29.603210" level="INFO">${ENC_PASS} = crypt:QnJZ2vmhQItp/xX8c3/GYzvvu4r6XrFWz1tPRnjhb08Ob1qb4n6XeiujDZKEyY6issRcwS2RU/PH</msg>
-<var>${ENC_PASS}</var>
-<arg>__import__('os').getenv('MY_CRYPT_PASS')</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-04-07T18:33:29.603044" elapsed="0.000184"/>
-</kw>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on darwin)" generated="2026-04-15T15:54:09.848261" rpa="false" schemaversion="5">
+<suite id="s1" name="Tehtava3" source="/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/tests/front/tehtava3.robot">
+<test id="s1-t1" name="Test Web Form - Kaikki kentät" line="9">
 <kw name="New Browser" owner="Browser">
-<msg time="2026-04-07T18:33:29.603628" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/browser/traces/temp/6cfbc3b6-ce6e-4766-ac5d-fac4152a85e8"}</msg>
-<msg time="2026-04-07T18:33:29.628256" level="INFO">Starting Browser process /Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/.venv/lib/python3.14/site-packages/Browser/wrapper/index.js using at 127.0.0.1:55593</msg>
-<msg time="2026-04-07T18:33:31.490228" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/browser/traces/temp/6cfbc3b6-ce6e-4766-ac5d-fac4152a85e8"}</msg>
+<msg time="2026-04-15T15:54:12.653571" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/browser/traces/temp/0edcddee-568b-4e57-92c8-d2d49e8f0105"}</msg>
+<msg time="2026-04-15T15:54:12.674736" level="INFO">Starting Browser process /Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/.venv/lib/python3.14/site-packages/Browser/wrapper/index.js using at 127.0.0.1:54513</msg>
+<msg time="2026-04-15T15:54:14.709951" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/browser/traces/temp/0edcddee-568b-4e57-92c8-d2d49e8f0105"}</msg>
 <arg>chromium</arg>
 <arg>headless=No</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2026-04-07T18:33:29.603305" elapsed="1.887727"/>
+<status status="PASS" start="2026-04-15T15:54:12.653017" elapsed="2.057277"/>
 </kw>
 <kw name="New Page" owner="Browser">
-<msg time="2026-04-07T18:33:31.935316" level="INFO">Successfully initialized new page object and opened url: http://localhost:5173/login.html</msg>
-<msg time="2026-04-07T18:33:31.935576" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
-<arg>http://localhost:5173/login.html</arg>
+<msg time="2026-04-15T15:54:15.121131" level="INFO">Successfully initialized new page object and opened url: https://www.selenium.dev/selenium/web/web-form.html</msg>
+<msg time="2026-04-15T15:54:15.121312" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://www.selenium.dev/selenium/web/web-form.html</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2026-04-07T18:33:31.491767" elapsed="0.444246"/>
+<status status="PASS" start="2026-04-15T15:54:14.711033" elapsed="0.410568"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2026-04-15T15:54:15.132203" level="INFO">Title: 'Web form'</msg>
+<arg>==</arg>
+<arg>Web form</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.122140" elapsed="0.010162"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2026-04-15T15:54:15.133139" level="INFO">Types the text 'benkku' in the given field.</msg>
+<arg>[name="my-text"]</arg>
+<arg>${Username}</arg>
+<arg>delay=0.1 s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.132592" elapsed="0.659259"/>
+</kw>
+<kw name="Type Secret" owner="Browser">
+<arg>[name="my-password"]</arg>
+<arg>$Password</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given secret from ``variable_name`` into the text field
+found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.792550" elapsed="0.027149"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2026-04-15T15:54:15.820546" level="INFO">Types the text 'Capybara' in the given field.</msg>
+<arg>[name="my-textarea"]</arg>
+<arg>${Message}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.820006" elapsed="0.013094"/>
+</kw>
+<kw name="Select Options By" owner="Browser">
+<msg time="2026-04-15T15:54:15.833772" level="INFO">Selects the option(s) 2 by attribute SelectAttribute.value from element [name="my-select"].</msg>
+<arg>[name="my-select"]</arg>
+<arg>value</arg>
+<arg>2</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.833316" elapsed="0.019336"/>
+</kw>
+<kw name="Get Selected Options" owner="Browser">
+<msg time="2026-04-15T15:54:15.858370" level="INFO">entry {
+  value: "Open this select menu"
+  label: "Open this select menu"
+}
+entry {
+  value: "1"
+  label: "One"
+  index: 1
+}
+entry {
+  value: "2"
+  label: "Two"
+  index: 2
+  selected: true
+}
+entry {
+  value: "3"
+  label: "Three"
+  index: 3
+}
+</msg>
+<arg>[name="my-select"]</arg>
+<arg>value</arg>
+<arg>==</arg>
+<arg>2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the specified attribute of selected options of the ``select`` element.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.852848" elapsed="0.005616"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2026-04-07T18:33:31.937845" level="INFO">Fills the text 'crypt:vxpDfYJV6+mwYJcB2HXEwcAOE2q6Yw5zk/hZRlqQKg/Hh+2c8kHl0irwz1Mi9+zzwWpfz8sr' in the given field.</msg>
-<arg>id=login-username</arg>
-<arg>${ENC_USER}</arg>
+<msg time="2026-04-15T15:54:15.859028" level="INFO">Fills the text 'New York' in the given field.</msg>
+<arg>[name="my-datalist"]</arg>
+<arg>New York</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2026-04-07T18:33:31.936596" elapsed="0.027607"/>
+<status status="PASS" start="2026-04-15T15:54:15.858602" elapsed="0.005301"/>
+</kw>
+<kw name="Get Property" owner="Browser">
+<msg time="2026-04-15T15:54:15.869110" level="INFO">Property: 'New York'</msg>
+<arg>[name="my-datalist"]</arg>
+<arg>value</arg>
+<arg>==</arg>
+<arg>New York</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the ``property`` of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.864450" elapsed="0.004750"/>
+</kw>
+<kw name="Upload File By Selector" owner="Browser">
+<arg>[name="my-file"]</arg>
+<arg>${UPLOAD_FILE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Uploads file from ``path`` to file input element matched by selector.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.869336" elapsed="0.007242"/>
+</kw>
+<kw name="Get Checkbox State" owner="Browser">
+<msg time="2026-04-15T15:54:15.881485" level="INFO">Retrieved dom property for element #my-check-1 containing true</msg>
+<msg time="2026-04-15T15:54:15.881543" level="INFO">Checkbox is checked</msg>
+<arg>\#my-check-1</arg>
+<arg>==</arg>
+<arg>checked</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the state of the checkbox found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.876732" elapsed="0.004865"/>
+</kw>
+<kw name="Get Checkbox State" owner="Browser">
+<msg time="2026-04-15T15:54:15.885003" level="INFO">Retrieved dom property for element #my-check-2 containing false</msg>
+<msg time="2026-04-15T15:54:15.885037" level="INFO">Checkbox is unchecked</msg>
+<arg>\#my-check-2</arg>
+<arg>==</arg>
+<arg>unchecked</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the state of the checkbox found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.881746" elapsed="0.003334"/>
+</kw>
+<kw name="Check Checkbox" owner="Browser">
+<arg>\#my-check-2</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.885201" elapsed="0.031564"/>
+</kw>
+<kw name="Get Checkbox State" owner="Browser">
+<msg time="2026-04-15T15:54:15.920036" level="INFO">Retrieved dom property for element #my-check-2 containing true</msg>
+<msg time="2026-04-15T15:54:15.920074" level="INFO">Checkbox is checked</msg>
+<arg>\#my-check-2</arg>
+<arg>==</arg>
+<arg>checked</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the state of the checkbox found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.916937" elapsed="0.003182"/>
+</kw>
+<kw name="Get Checkbox State" owner="Browser">
+<msg time="2026-04-15T15:54:15.923029" level="INFO">Retrieved dom property for element #my-radio-1 containing true</msg>
+<msg time="2026-04-15T15:54:15.923063" level="INFO">Checkbox is checked</msg>
+<arg>\#my-radio-1</arg>
+<arg>==</arg>
+<arg>checked</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the state of the checkbox found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.920228" elapsed="0.002876"/>
+</kw>
+<kw name="Check Checkbox" owner="Browser">
+<arg>\#my-radio-2</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.923273" elapsed="0.026004"/>
+</kw>
+<kw name="Get Checkbox State" owner="Browser">
+<msg time="2026-04-15T15:54:15.952523" level="INFO">Retrieved dom property for element #my-radio-2 containing true</msg>
+<msg time="2026-04-15T15:54:15.952563" level="INFO">Checkbox is checked</msg>
+<arg>\#my-radio-2</arg>
+<arg>==</arg>
+<arg>checked</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the state of the checkbox found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.949459" elapsed="0.003150"/>
+</kw>
+<kw name="Get Checkbox State" owner="Browser">
+<msg time="2026-04-15T15:54:15.955483" level="INFO">Retrieved dom property for element #my-radio-1 containing false</msg>
+<msg time="2026-04-15T15:54:15.955519" level="INFO">Checkbox is unchecked</msg>
+<arg>\#my-radio-1</arg>
+<arg>==</arg>
+<arg>unchecked</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the state of the checkbox found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T15:54:15.952721" elapsed="0.002842"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2026-04-07T18:33:31.965716" level="INFO">Fills the text 'crypt:QnJZ2vmhQItp/xX8c3/GYzvvu4r6XrFWz1tPRnjhb08Ob1qb4n6XeiujDZKEyY6issRcwS2RU/PH' in the given field.</msg>
-<arg>id=login-password</arg>
-<arg>${ENC_PASS}</arg>
+<msg time="2026-04-15T15:54:15.955921" level="FAIL">Keyword 'Browser.Fill Text' expected 2 to 3 arguments, got 1.</msg>
+<arg>[name="my-colors"]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2026-04-07T18:33:31.964612" elapsed="0.007795"/>
+<status status="FAIL" start="2026-04-15T15:54:15.955665" elapsed="0.000289">Keyword 'Browser.Fill Text' expected 2 to 3 arguments, got 1.</status>
+</kw>
+<kw name="Get Attribute" owner="Browser">
+<arg>[name="my-colors"]</arg>
+<arg>value</arg>
+<arg>==</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-04-15T15:54:15.956041" elapsed="0.000033"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<arg>[name="my-date"]</arg>
+<arg>2025-01-15</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-04-15T15:54:15.956138" elapsed="0.000024"/>
+</kw>
+<kw name="Get Attribute" owner="Browser">
+<arg>[name="my-date"]</arg>
+<arg>value</arg>
+<arg>==</arg>
+<arg>2025-01-15</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-04-15T15:54:15.956217" elapsed="0.000022"/>
+</kw>
+<kw name="Click With Options" owner="Browser">
+<arg>button</arg>
+<arg>delay=2 s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-04-15T15:54:15.956300" elapsed="0.000021"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<arg>id=message</arg>
+<arg>==</arg>
+<arg>Received!</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-04-15T15:54:15.956373" elapsed="0.000021"/>
 </kw>
 <kw name="Close Browser" owner="Browser" type="TEARDOWN">
-<msg time="2026-04-07T18:33:32.082140" level="INFO">Closed browser</msg>
+<msg time="2026-04-15T15:54:16.083266" level="INFO">Closed browser</msg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-04-07T18:33:31.973183" elapsed="0.109100"/>
+<status status="PASS" start="2026-04-15T15:54:15.956567" elapsed="0.126820"/>
 </kw>
-<status status="PASS" start="2026-04-07T18:33:29.598878" elapsed="2.483564"/>
+<status status="FAIL" start="2026-04-15T15:54:12.651561" elapsed="3.432002">Keyword 'Browser.Fill Text' expected 2 to 3 arguments, got 1.</status>
 </test>
-<status status="PASS" start="2026-04-07T18:33:29.353210" elapsed="2.732205"/>
+<status status="FAIL" start="2026-04-15T15:54:09.849290" elapsed="6.236769"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Tehtava6" id="s1" pass="1" fail="0" skip="0">Tehtava6</stat>
+<stat name="Tehtava3" id="s1" pass="0" fail="1" skip="0">Tehtava3</stat>
 </suite>
 </statistics>
 <errors>
