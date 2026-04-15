@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on darwin)" generated="2026-04-15T16:51:11.282284" rpa="false" schemaversion="5">
+<suite id="s1" name="K2026-Hyte-Projekti-Vite-Main" source="/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main">
+<suite id="s1-s1" name="Tests" source="/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/tests">
+<suite id="s1-s1-s1" name="Front" source="/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/tests/front">
+<suite id="s1-s1-s1-s1" name="Browser Demo" source="/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/tests/front/browser_demo.robot">
+<test id="s1-s1-s1-s1-t1" name="Kivigymiin" line="7">
+<kw name="New Browser" owner="Browser">
+<msg time="2026-04-15T16:51:14.055478" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/results/browser/traces/temp/790931a4-5085-43c1-8729-1f4f26dcde25"}</msg>
+<msg time="2026-04-15T16:51:14.076218" level="INFO">Starting Browser process /Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/.venv/lib/python3.14/site-packages/Browser/wrapper/index.js using at 127.0.0.1:55451</msg>
+<msg time="2026-04-15T16:51:15.993978" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/results/browser/traces/temp/790931a4-5085-43c1-8729-1f4f26dcde25"}</msg>
+<arg>chromium</arg>
+<arg>headless=No</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-04-15T16:51:14.055011" elapsed="1.939234"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-04-15T16:51:16.320456" level="INFO">Successfully initialized new page object and opened url: http://localhost:5173/login.html</msg>
+<msg time="2026-04-15T16:51:16.320534" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>http://localhost:5173/login.html</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-04-15T16:51:15.994791" elapsed="0.325872"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T16:51:16.321291" level="INFO">Fills the text 'benkku' in the given field.</msg>
+<arg>id=login-username</arg>
+<arg>${Username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:16.320857" elapsed="0.021753"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T16:51:17.014903" level="INFO">Slept 670 milliseconds.</msg>
+<arg>0.67s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T16:51:16.342805" elapsed="0.672663"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T16:51:17.018264" level="INFO">Fills the text '***' in the given field.</msg>
+<arg>id=login-password</arg>
+<arg>${Password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:17.016380" elapsed="0.050334"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T16:51:17.067278" level="INFO">Clicks the element '"Kirjaudu"'.</msg>
+<arg>"Kirjaudu"</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:17.066922" elapsed="0.041698"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T16:51:18.111041" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T16:51:17.108815" elapsed="1.002714"/>
+</kw>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2026-04-15T16:51:18.230080" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-15T16:51:18.112655" elapsed="0.117710"/>
+</kw>
+<status status="PASS" start="2026-04-15T16:51:14.053674" elapsed="4.176862"/>
+</test>
+<status status="PASS" start="2026-04-15T16:51:11.304798" elapsed="6.928024"/>
+</suite>
+<suite id="s1-s1-s1-s2" name="Moodle" source="/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/tests/front/moodle.robot">
+<test id="s1-s1-s1-s2-t1" name="Login to Moodle" line="7">
+<kw name="New Browser" owner="Browser">
+<msg time="2026-04-15T16:51:18.242151" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/results/browser/traces/temp/53885a3d-500c-4363-8265-a4bcf59e4b95"}</msg>
+<msg time="2026-04-15T16:51:18.506779" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/results/browser/traces/temp/53885a3d-500c-4363-8265-a4bcf59e4b95"}</msg>
+<arg>chromium</arg>
+<arg>headless=No</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-04-15T16:51:18.241581" elapsed="0.265323"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-04-15T16:51:20.005258" level="INFO">Successfully initialized new page object and opened url: https://moodle.metropolia.fi</msg>
+<msg time="2026-04-15T16:51:20.005446" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://moodle.metropolia.fi</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-04-15T16:51:18.507337" elapsed="1.498307"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2026-04-15T16:51:20.032224" level="INFO">Title: 'Etusivu | Moodle'</msg>
+<msg time="2026-04-15T16:51:20.032372" level="INFO">${PageTitle} = Etusivu | Moodle</msg>
+<var>${PageTitle}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2026-04-15T16:51:20.005984" elapsed="0.026477"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${PageTitle}</arg>
+<arg>Etusivu | Moodle</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-04-15T16:51:20.032650" elapsed="0.000355"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T16:51:20.033405" level="INFO">Clicks the element 'xpath=(//a[@href='https://moodle.metropolia.fi/login/index.php' and text()='Kirjaudu'])[1]'.</msg>
+<arg>xpath=(//a[@href='https://moodle.metropolia.fi/login/index.php' and text()='Kirjaudu'])[1]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:20.033117" elapsed="0.154728"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-04-15T16:51:30.438244" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-15T16:51:30.438351" level="INFO">See also file:///Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/results/playwright-log.txt for additional details.</msg>
+<msg time="2026-04-15T16:51:30.438575" level="FAIL">TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('//div[@class=\'text_to_html\' and text()=\'Metropolia\']') to be visible
+</msg>
+<arg>xpath=//div[@class='text_to_html' and text()='Metropolia']</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="FAIL" start="2026-04-15T16:51:20.188041" elapsed="10.254706">TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('//div[@class=\'text_to_html\' and text()=\'Metropolia\']') to be visible
+</status>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>xpath=//div[@class='text_to_html' and text()='Metropolia']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-04-15T16:51:30.442893" elapsed="0.000056"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<arg>id=username</arg>
+<arg>${Username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-04-15T16:51:30.443030" elapsed="0.000027"/>
+</kw>
+<kw name="Fill Secret" owner="Browser">
+<arg>id=password</arg>
+<arg>$Password</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Fills the given secret from ``variable_name`` into the
+text field found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-04-15T16:51:30.443130" elapsed="0.000038"/>
+</kw>
+<kw name="Click With Options" owner="Browser">
+<arg>"Login"</arg>
+<arg>delay=2 s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2026-04-15T16:51:30.443279" elapsed="0.000032"/>
+</kw>
+<status status="FAIL" start="2026-04-15T16:51:18.239880" elapsed="12.203556">TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('//div[@class=\'text_to_html\' and text()=\'Metropolia\']') to be visible
+</status>
+</test>
+<status status="FAIL" start="2026-04-15T16:51:18.234354" elapsed="12.210042"/>
+</suite>
+<suite id="s1-s1-s1-s3" name="Tehtava3" source="/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/tests/front/tehtava3.robot">
+<test id="s1-s1-s1-s3-t1" name="Test Web Form" line="6">
+<kw name="New Browser" owner="Browser">
+<msg time="2026-04-15T16:51:30.450039" level="INFO">Switching browser to browser=a7b16f5d-95ef-4160-9d58-4dd99ee7937d</msg>
+<msg time="2026-04-15T16:51:30.451156" level="INFO">Successfully changed active browser: browser=a7b16f5d-95ef-4160-9d58-4dd99ee7937d</msg>
+<msg time="2026-04-15T16:51:30.451200" level="INFO">Reusing existing browser with id: browser=a7b16f5d-95ef-4160-9d58-4dd99ee7937d</msg>
+<arg>chromium</arg>
+<arg>headless=No</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-04-15T16:51:30.449760" elapsed="0.001472"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-04-15T16:51:30.630939" level="INFO">Successfully initialized new page object and opened url: https://www.selenium.dev/selenium/web/web-form.html</msg>
+<arg>https://www.selenium.dev/selenium/web/web-form.html</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-04-15T16:51:30.451334" elapsed="0.180045"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2026-04-15T16:51:30.634598" level="INFO">Title: 'Web form'</msg>
+<arg>==</arg>
+<arg>Web form</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2026-04-15T16:51:30.631679" elapsed="0.002979"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2026-04-15T16:51:30.635093" level="INFO">Types the text 'benkku' in the given field.</msg>
+<arg>[name="my-text"]</arg>
+<arg>${Username}</arg>
+<arg>delay=0.1 s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:30.634793" elapsed="0.638508"/>
+</kw>
+<kw name="Type Secret" owner="Browser">
+<arg>[name="my-password"]</arg>
+<arg>$Password</arg>
+<arg>delay=0.1 s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given secret from ``variable_name`` into the text field
+found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:31.273665" elapsed="0.977691"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2026-04-15T16:51:32.253974" level="INFO">Types the text 'Capybara' in the given field.</msg>
+<arg>[name="my-textarea"]</arg>
+<arg>${Message}</arg>
+<arg>delay=0.1 s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:32.252200" elapsed="0.851905"/>
+</kw>
+<kw name="Select Options By" owner="Browser">
+<msg time="2026-04-15T16:51:33.106310" level="INFO">Selects the option(s) 2, delay=2 s by attribute SelectAttribute.value from element .form-select.</msg>
+<arg>.form-select</arg>
+<arg>value</arg>
+<arg>2</arg>
+<arg>delay=2 s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:33.104838" elapsed="0.034454"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2026-04-15T16:51:33.140199" level="INFO">Types the text 'Seattle' in the given field.</msg>
+<arg>[name="my-datalist"]</arg>
+<arg>${US_city}</arg>
+<arg>delay=0.1 s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:33.139574" elapsed="0.735710"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T16:51:34.877771" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T16:51:33.876001" elapsed="1.002356"/>
+</kw>
+<kw name="Uncheck Checkbox" owner="Browser">
+<arg>id=my-check-1</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Unchecks the checkbox found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:34.879270" elapsed="0.036269"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T16:51:35.118600" level="INFO">Slept 200 milliseconds.</msg>
+<arg>0.2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T16:51:34.915754" elapsed="0.203466"/>
+</kw>
+<kw name="Check Checkbox" owner="Browser">
+<arg>id=my-check-2</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:35.120106" elapsed="0.031531"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T16:51:35.354133" level="INFO">Slept 200 milliseconds.</msg>
+<arg>0.2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T16:51:35.152015" elapsed="0.202659"/>
+</kw>
+<kw name="Check Checkbox" owner="Browser">
+<arg>id=my-radio-2</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:35.355461" elapsed="0.028065"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T16:51:35.586414" level="INFO">Slept 200 milliseconds.</msg>
+<arg>0.2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T16:51:35.383870" elapsed="0.203073"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T16:51:35.589820" level="INFO">Fills the text '10/11/2005' in the given field.</msg>
+<arg>[name="my-date"]</arg>
+<arg>${Date}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:35.587765" elapsed="0.020120"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-04-15T16:51:37.610961" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-04-15T16:51:35.608338" elapsed="2.003152"/>
+</kw>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2026-04-15T16:51:37.731719" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-15T16:51:37.612581" elapsed="0.119261"/>
+</kw>
+<status status="PASS" start="2026-04-15T16:51:30.448805" elapsed="7.283138"/>
+</test>
+<status status="PASS" start="2026-04-15T16:51:30.445181" elapsed="7.288201"/>
+</suite>
+<suite id="s1-s1-s1-s4" name="Tehtava4" source="/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/tests/front/tehtava4.robot">
+<test id="s1-s1-s1-s4-t1" name="Täytä ja tallenna merkintä" line="12">
+<kw name="New Browser" owner="Browser">
+<msg time="2026-04-15T16:51:37.736526" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/results/browser/traces/temp/d0d10ca3-0c72-4d22-be62-72fcad02a9f8"}</msg>
+<msg time="2026-04-15T16:51:37.989222" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/results/browser/traces/temp/d0d10ca3-0c72-4d22-be62-72fcad02a9f8"}</msg>
+<arg>chromium</arg>
+<arg>headless=No</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-04-15T16:51:37.736171" elapsed="0.253268"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-04-15T16:51:38.372476" level="INFO">Successfully initialized new page object and opened url: http://localhost:5173/paivakirja.html</msg>
+<msg time="2026-04-15T16:51:38.372574" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-04-15T16:51:37.989911" elapsed="0.382829"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-04-15T16:51:38.402168" level="INFO">Text: 'Lisää uusi merkintä'</msg>
+<arg>h2 &gt;&gt; text=Lisää uusi merkintä</arg>
+<arg>==</arg>
+<arg>Lisää uusi merkintä</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:38.372966" elapsed="0.029284"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T16:51:38.402981" level="INFO">Fills the text '2026-04-01' in the given field.</msg>
+<arg>id=date</arg>
+<arg>${DATE}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:38.402521" elapsed="0.004377"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T16:51:38.407698" level="INFO">Fills the text '88' in the given field.</msg>
+<arg>id=weight</arg>
+<arg>${WEIGHT}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:38.407070" elapsed="0.005386"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T16:51:38.413531" level="INFO">Fills the text '8' in the given field.</msg>
+<arg>id=sleep</arg>
+<arg>${SLEEP}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:38.412797" elapsed="0.004873"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T16:51:38.418538" level="INFO">Fills the text 'AUTOMATISOITU TESTImerkintä!' in the given field.</msg>
+<arg>id=mood</arg>
+<arg>${MOOD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:38.417825" elapsed="0.004115"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T16:51:38.422392" level="INFO">Clicks the element 'button[type="submit"]'.</msg>
+<arg>button[type="submit"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:38.422099" elapsed="0.028151"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-04-15T16:51:38.450778" level="INFO">Clicks the element 'button.get_entries'.</msg>
+<arg>button.get_entries</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:38.450433" elapsed="0.071328"/>
+</kw>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2026-04-15T16:51:38.590224" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-15T16:51:38.522078" elapsed="0.068248"/>
+</kw>
+<status status="PASS" start="2026-04-15T16:51:37.735976" elapsed="0.854609"/>
+</test>
+<status status="PASS" start="2026-04-15T16:51:37.734476" elapsed="0.857607"/>
+</suite>
+<suite id="s1-s1-s1-s5" name="Tehtava5" source="/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/tests/front/tehtava5.robot">
+<test id="s1-s1-s1-s5-t1" name="Kirjautuminen .env tunnuksilla" line="5">
+<kw name="Evaluate" owner="BuiltIn">
+<arg>__import__('dotenv').load_dotenv()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T16:51:38.594974" elapsed="0.004465"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T16:51:38.599775" level="INFO">${USER} = benkku</msg>
+<var>${USER}</var>
+<arg>__import__('os').getenv('envTunnus')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T16:51:38.599551" elapsed="0.000241"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T16:51:38.600017" level="INFO">${PASS} = benkku123</msg>
+<var>${PASS}</var>
+<arg>__import__('os').getenv('envSalis')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T16:51:38.599863" elapsed="0.000167"/>
+</kw>
+<kw name="New Browser" owner="Browser">
+<msg time="2026-04-15T16:51:38.600383" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/results/browser/traces/temp/1bad0a29-2c83-4900-902d-dc37bfc30905"}</msg>
+<msg time="2026-04-15T16:51:38.845524" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/results/browser/traces/temp/1bad0a29-2c83-4900-902d-dc37bfc30905"}</msg>
+<arg>chromium</arg>
+<arg>headless=No</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-04-15T16:51:38.600096" elapsed="0.245868"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-04-15T16:51:39.198737" level="INFO">Successfully initialized new page object and opened url: http://localhost:5173/login.html</msg>
+<msg time="2026-04-15T16:51:39.198918" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>http://localhost:5173/login.html</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-04-15T16:51:38.846300" elapsed="0.352817"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T16:51:39.200466" level="INFO">Fills the text 'benkku' in the given field.</msg>
+<arg>id=login-username</arg>
+<arg>${USER}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:39.199553" elapsed="0.021645"/>
+</kw>
+<kw name="Type Secret" owner="Browser">
+<arg>id=login-password</arg>
+<arg>$PASS</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given secret from ``variable_name`` into the text field
+found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:39.221408" elapsed="0.011500"/>
+</kw>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2026-04-15T16:51:39.339027" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-15T16:51:39.233159" elapsed="0.105977"/>
+</kw>
+<status status="PASS" start="2026-04-15T16:51:38.594666" elapsed="0.744567"/>
+</test>
+<status status="PASS" start="2026-04-15T16:51:38.593101" elapsed="0.747355"/>
+</suite>
+<suite id="s1-s1-s1-s6" name="Tehtava6" source="/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/tests/front/tehtava6.robot">
+<test id="s1-s1-s1-s6-t1" name="Kirjautuminen kryptatuilla tunnuksilla" line="6">
+<kw name="Evaluate" owner="BuiltIn">
+<arg>__import__('dotenv').load_dotenv()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T16:51:39.346075" elapsed="0.000750"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T16:51:39.347141" level="INFO">${ENC_USER} = crypt:vxpDfYJV6+mwYJcB2HXEwcAOE2q6Yw5zk/hZRlqQKg/Hh+2c8kHl0irwz1Mi9+zzwWpfz8sr</msg>
+<var>${ENC_USER}</var>
+<arg>__import__('os').getenv('MY_CRYPT_USER')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T16:51:39.346933" elapsed="0.000229"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-04-15T16:51:39.347588" level="INFO">${ENC_PASS} = crypt:QnJZ2vmhQItp/xX8c3/GYzvvu4r6XrFWz1tPRnjhb08Ob1qb4n6XeiujDZKEyY6issRcwS2RU/PH</msg>
+<var>${ENC_PASS}</var>
+<arg>__import__('os').getenv('MY_CRYPT_PASS')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-15T16:51:39.347242" elapsed="0.000364"/>
+</kw>
+<kw name="New Browser" owner="Browser">
+<msg time="2026-04-15T16:51:39.348115" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/results/browser/traces/temp/1e7a8a1b-3580-4e3d-838f-d0aa2c7c2ccd"}</msg>
+<msg time="2026-04-15T16:51:39.594556" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/results/browser/traces/temp/1e7a8a1b-3580-4e3d-838f-d0aa2c7c2ccd"}</msg>
+<arg>chromium</arg>
+<arg>headless=No</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-04-15T16:51:39.347756" elapsed="0.246920"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-04-15T16:51:39.921442" level="INFO">Successfully initialized new page object and opened url: http://localhost:5173/login.html</msg>
+<msg time="2026-04-15T16:51:39.921682" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>http://localhost:5173/login.html</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-04-15T16:51:39.595044" elapsed="0.326941"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T16:51:39.923199" level="INFO">Fills the text 'crypt:vxpDfYJV6+mwYJcB2HXEwcAOE2q6Yw5zk/hZRlqQKg/Hh+2c8kHl0irwz1Mi9+zzwWpfz8sr' in the given field.</msg>
+<arg>id=login-username</arg>
+<arg>${ENC_USER}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:39.922183" elapsed="0.024760"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-04-15T16:51:39.947823" level="INFO">Fills the text 'crypt:QnJZ2vmhQItp/xX8c3/GYzvvu4r6XrFWz1tPRnjhb08Ob1qb4n6XeiujDZKEyY6issRcwS2RU/PH' in the given field.</msg>
+<arg>id=login-password</arg>
+<arg>${ENC_PASS}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-04-15T16:51:39.947356" elapsed="0.003879"/>
+</kw>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2026-04-15T16:51:40.058037" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-15T16:51:39.951423" elapsed="0.106742"/>
+</kw>
+<status status="PASS" start="2026-04-15T16:51:39.344987" elapsed="0.713282"/>
+</test>
+<status status="PASS" start="2026-04-15T16:51:39.341519" elapsed="0.717899"/>
+</suite>
+<status status="FAIL" start="2026-04-15T16:51:11.304427" elapsed="28.755973"/>
+</suite>
+<status status="FAIL" start="2026-04-15T16:51:11.303959" elapsed="28.756761"/>
+</suite>
+<status status="FAIL" start="2026-04-15T16:51:11.282997" elapsed="28.778015"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="K2026-Hyte-Projekti-Vite-Main" id="s1" pass="5" fail="1" skip="0">K2026-Hyte-Projekti-Vite-Main</stat>
+<stat name="Tests" id="s1-s1" pass="5" fail="1" skip="0">K2026-Hyte-Projekti-Vite-Main.Tests</stat>
+<stat name="Front" id="s1-s1-s1" pass="5" fail="1" skip="0">K2026-Hyte-Projekti-Vite-Main.Tests.Front</stat>
+<stat name="Browser Demo" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">K2026-Hyte-Projekti-Vite-Main.Tests.Front.Browser Demo</stat>
+<stat name="Moodle" id="s1-s1-s1-s2" pass="0" fail="1" skip="0">K2026-Hyte-Projekti-Vite-Main.Tests.Front.Moodle</stat>
+<stat name="Tehtava3" id="s1-s1-s1-s3" pass="1" fail="0" skip="0">K2026-Hyte-Projekti-Vite-Main.Tests.Front.Tehtava3</stat>
+<stat name="Tehtava4" id="s1-s1-s1-s4" pass="1" fail="0" skip="0">K2026-Hyte-Projekti-Vite-Main.Tests.Front.Tehtava4</stat>
+<stat name="Tehtava5" id="s1-s1-s1-s5" pass="1" fail="0" skip="0">K2026-Hyte-Projekti-Vite-Main.Tests.Front.Tehtava5</stat>
+<stat name="Tehtava6" id="s1-s1-s1-s6" pass="1" fail="0" skip="0">K2026-Hyte-Projekti-Vite-Main.Tests.Front.Tehtava6</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
