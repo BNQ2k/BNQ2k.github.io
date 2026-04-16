@@ -140,3 +140,15 @@ TESTIT:
 - [Etusivu](https://bnq2k.github.io/TESTIT.html)
 - [Log](https://bnq2k.github.io/log.html)
 - [Report](https://bnq2k.github.io/report.html)
+
+## 9. API-testaus
+Testasin back-endin rajapintaa RequestsLibrarylla. Varmistin, että:
+
+Palvelin vastaa pyyntöihin (200 OK).
+
+Suojatut reitit (esim. /api/users) palauttavat 401 Unauthorized ilman voimassa olevaa tokenia.
+
+Havainnot ja kommentit
+Haasteet: Alussa oli vaikeuksia saada Git ja VS Coden terminaali toimimaan samassa kansiossa. Myös RequestsLibraryn asennus vaati Python-ympäristön tarkistamista.
+
+Oppiminen: Opim miten automatisoidut testit voivat säästää aikaa, kun ei tarvitse klikkailla selainta käsin jokaisen muutoksen jälkeen. API-testaus tuntui nopeammalta ja varmemmalta tavalta testata backendiä.
