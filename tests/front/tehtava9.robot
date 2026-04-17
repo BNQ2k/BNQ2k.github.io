@@ -1,19 +1,25 @@
 *** Settings ***
 Library    RequestsLibrary
+Library    Collections
 
 *** Variables ***
-${BASE_URL}    http://localhost:3000
+${BASE_URL}    http://localhost:3000/api
+${USER}        benjamin.lepisto@metropolia.fi
+${PASS}        Benkku2505
 
 *** Test Cases ***
-Onko palvelin pystyssä?
-    [Documentation]    Testataan, että backend vastaa peruspyyntöön (200 OK)
-    Create Session    oma_api    ${BASE_URL}
-    ${vastaus}=       GET On Session    oma_api    /
-    Should Be Equal As Strings    ${vastaus.status_code}    200
+Käyttäjälistaus tokeninilla
+    Create Session    backend    ${BASE_URL}
+    ${resp}=    GET On Session    backend    /users    expected_status=401
+    Status Should Be    401    ${resp}
 
-Käyttäjälistaus (API)
-    [Documentation]    Testataan, että /api/users vaatii autentikaation (401 Unauthorized)
-    Create Session    oma_api    ${BASE_URL}
-    # Odotamme 401-virhettä, koska emme lähetä tokenia
-    ${vastaus}=       GET On Session    oma_api    /api/users    expected_status=401
-    Should Be Equal As Strings    ${vastaus.status_code}    401
+Kirjautuminen tunnuksilla
+    &{data}=    Create Dictionary    username=${USER}    password=${PASS}
+    ${resp}=    POST On Session    backend    /users/login    json=${data}
+    Status Should Be    200    ${resp}
+
+    # Otetaan token talteen ja testataan haku
+    ${token}=    Set Variable    ${resp.json()}[token]
+    &{headers}=    Create Dictionary    Authorization=Bearer ${token}
+    ${resp_me}=    GET On Session    backend    /users/me    headers=${headers}
+    Status Should Be    200    ${resp_me}

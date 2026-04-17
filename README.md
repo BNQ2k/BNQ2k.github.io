@@ -152,3 +152,7 @@ Havainnot ja kommentit
 Haasteet: Alussa oli vaikeuksia saada Git ja VS Coden terminaali toimimaan samassa kansiossa. Myös RequestsLibraryn asennus vaati Python-ympäristön tarkistamista.
 
 Oppiminen: Opim miten automatisoidut testit voivat säästää aikaa, kun ei tarvitse klikkailla selainta käsin jokaisen muutoksen jälkeen. API-testaus tuntui nopeammalta ja varmemmalta tavalta testata backendiä.
+
+## 10.
+
+Tässä projektissa on hyödynnetty tekoälyä Gemini teknisenä tukena.

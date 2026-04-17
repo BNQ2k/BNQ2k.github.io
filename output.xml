@@ -1,105 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.9.0 on darwin)" generated="2026-04-16T14:10:46.012497" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.14.3 on darwin)" generated="2026-04-17T16:28:26.828632" rpa="false" schemaversion="5">
 <suite id="s1" name="Tehtava9" source="/Users/benkku/Documents/Metropolia/oma-projekti/front-end/k2026-hyte-projekti-vite-main/tests/front/tehtava9.robot">
-<test id="s1-t1" name="Tarkista Että Palvelin On Pystyssä" line="10">
+<test id="s1-t1" name="Käyttäjälistaus tokeninilla" line="12">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-04-16T14:10:46.097005" level="INFO">Creating Session using : alias=oma_api, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>oma_api</arg>
+<msg time="2026-04-17T16:28:26.943525" level="INFO">Creating Session using : alias=backend, url=http://localhost:3000/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>backend</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-04-16T14:10:46.096871" elapsed="0.000270"/>
+<status status="PASS" start="2026-04-17T16:28:26.943427" elapsed="0.000204"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-04-16T14:10:46.105955" level="INFO">GET Request : url=http://localhost:3000/ 
- path_url=/ 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2026-04-16T14:10:46.106089" level="INFO">GET Response : url=http://localhost:3000/ 
- status=200, reason=OK 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Accept-Ranges': 'bytes', 'Cache-Control': 'public, max-age=0', 'Last-Modified': 'Thu, 05 Feb 2026 08:52:43 GMT', 'ETag': 'W/"16c-19c2d00f509"', 'Content-Type': 'text/html; charset=UTF-8', 'Content-Length': '364', 'Date': 'Thu, 16 Apr 2026 11:10:46 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body=&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;link rel="stylesheet" href="style.css"&gt;
-  &lt;script src="script.js" defer&gt;&lt;/script&gt;
-  &lt;title&gt;my index html&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;my web app&lt;/h1&gt;
-  &lt;p&gt;html file served by express static file server.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
- 
- </msg>
-<msg time="2026-04-16T14:10:46.106214" level="INFO">${vastaus} = &lt;Response [200]&gt;</msg>
-<var>${vastaus}</var>
-<arg>oma_api</arg>
-<arg>/</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-04-16T14:10:46.097583" elapsed="0.008655"/>
-</kw>
-<kw name="Should Be Equal As Strings" owner="BuiltIn">
-<msg time="2026-04-16T14:10:46.106967" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${vastaus.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2026-04-16T14:10:46.106405" elapsed="0.000611"/>
-</kw>
-<doc>Testaa että backend vastaa juuriosoitteessa.</doc>
-<status status="PASS" start="2026-04-16T14:10:46.096163" elapsed="0.010985"/>
-</test>
-<test id="s1-t2" name="Testaa API Rajapinnan Suojaus" line="16">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-04-16T14:10:46.107774" level="INFO">Creating Session using : alias=oma_api, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>oma_api</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-04-16T14:10:46.107664" elapsed="0.000221"/>
-</kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-04-16T14:10:46.110257" level="INFO">GET Request : url=http://localhost:3000/api/users 
+<msg time="2026-04-17T16:28:26.949483" level="INFO">GET Request : url=http://localhost:3000/api/users 
  path_url=/api/users 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2026-04-16T14:10:46.110310" level="INFO">GET Response : url=http://localhost:3000/api/users 
+<msg time="2026-04-17T16:28:26.949544" level="INFO">GET Response : url=http://localhost:3000/api/users 
  status=401, reason=Unauthorized 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '27', 'ETag': 'W/"1b-MyIJVouBluyOKVmZUi1epkSkOtk"', 'Date': 'Thu, 16 Apr 2026 11:10:46 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '27', 'ETag': 'W/"1b-MyIJVouBluyOKVmZUi1epkSkOtk"', 'Date': 'Fri, 17 Apr 2026 13:28:26 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
  body={"message":"token missing"} 
  </msg>
-<msg time="2026-04-16T14:10:46.110396" level="INFO">${vastaus} = &lt;Response [401]&gt;</msg>
-<var>${vastaus}</var>
-<arg>oma_api</arg>
-<arg>/api/users</arg>
+<msg time="2026-04-17T16:28:26.949609" level="INFO">${resp} = &lt;Response [401]&gt;</msg>
+<var>${resp}</var>
+<arg>backend</arg>
+<arg>/users</arg>
 <arg>expected_status=401</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-04-16T14:10:46.107993" elapsed="0.002423"/>
+<status status="PASS" start="2026-04-17T16:28:26.943722" elapsed="0.005900"/>
 </kw>
-<kw name="Should Be Equal As Strings" owner="BuiltIn">
-<msg time="2026-04-16T14:10:46.110994" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${vastaus.status_code}</arg>
+<kw name="Status Should Be" owner="RequestsLibrary">
 <arg>401</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2026-04-16T14:10:46.110547" elapsed="0.000490"/>
+<arg>${resp}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-04-17T16:28:26.949719" elapsed="0.000111"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-04-16T14:10:46.111372" level="INFO">API palautti oikein 401, kun token puuttui.</msg>
-<arg>API palautti oikein 401, kun token puuttui.</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-04-16T14:10:46.111152" elapsed="0.000265"/>
-</kw>
-<doc>Varmistaa että /api/users vaatii oikeasti kirjautumisen.</doc>
-<status status="PASS" start="2026-04-16T14:10:46.107304" elapsed="0.004236"/>
+<status status="PASS" start="2026-04-17T16:28:26.942988" elapsed="0.006907"/>
 </test>
-<doc>Tehtävä 9: Taustapalvelimen (API) testaus RequestsLibrarylla.</doc>
-<status status="PASS" start="2026-04-16T14:10:46.013512" elapsed="0.098329"/>
+<test id="s1-t2" name="Kirjautuminen tunnuksilla" line="17">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-04-17T16:28:26.950379" level="INFO">&amp;{data} = { username=benjamin.lepisto@metropolia.fi | password=Benkku2505 }</msg>
+<var>&amp;{data}</var>
+<arg>username=${USER}</arg>
+<arg>password=${PASS}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-17T16:28:26.950119" elapsed="0.000274"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-04-17T16:28:27.729070" level="INFO">POST Request : url=http://localhost:3000/api/users/login 
+ path_url=/api/users/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '72', 'Content-Type': 'application/json'} 
+ body=b'{"username": "benjamin.lepisto@metropolia.fi", "password": "Benkku2505"}' 
+ </msg>
+<msg time="2026-04-17T16:28:27.729146" level="INFO">POST Response : url=http://localhost:3000/api/users/login 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '1975', 'ETag': 'W/"7b7-feTWoelYIOh+Q4+NHtHf/c90c2Y"', 'Date': 'Fri, 17 Apr 2026 13:28:27 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"message":"Logged in successfully with Kubios","user":{"birthdate":"2005-10-11","email":"benjamin.lepisto@metropolia.fi","family_name":"Lepistö","gender":"male","given_name":"Benjamin","height":1.79,"sub":"7df22eac-48ed-4a5f-bfe9-d7bd4f5de7ab","weight":70},"user_id":58,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjU4LCJrdWJpb3NJZFRva2VuIjoiZXlKcmFXUWlPaUpRVkVSUlVHWkxialUyYlhCNVJVOXBjSFZ4T0dSRlVEQlBlWGxKTVdoMVdsUXdNVkpWZWtkWFVTdFJQU0lzSW1Gc1p5STZJbEpUTWpVMkluMC5leUpoZEY5b1lYTm9Jam9pUkhsNk5HVkVlVmx6ZFZkeWNqSmFVVnAxUjNaclVTSXNJbk4xWWlJNklqZGtaakl5WldGakxUUTRaV1F0TkdFMVppMWlabVU1TFdRM1ltUTBaalZrWlRkaFlpSXNJbVZ0WVdsc1gzWmxjbWxtYVdWa0lqcDBjblZsTENKcGMzTWlPaUpvZEhSd2N6cGNMMXd2WTI5bmJtbDBieTFwWkhBdVpYVXRkMlZ6ZEMweExtRnRZWHB2Ym1GM2N5NWpiMjFjTDJWMUxYZGxjM1F0TVY5MVVXMUJaelExZUhraUxDSmpiMmR1YVhSdk9uVnpaWEp1WVcxbElqb2lOMlJtTWpKbFlXTXRORGhsWkMwMFlUVm1MV0ptWlRrdFpEZGlaRFJtTldSbE4yRmlJaXdpWjJsMlpXNWZibUZ0WlNJNklrSmxibXBoYldsdUlpd2lZWFZrSWpvaU1uSTRNemhsYjJsa01YWmxZakJ4Ym5GbmJqZ3hjV0YxYlRBaUxDSmxkbVZ1ZEY5cFpDSTZJalkzT0dVMlltRm1MVFF4TURVdE5EUmhOaTA0WVRJeExUVTVNak0xTkRVNE1UazVNU0lzSW5SdmEyVnVYM1Z6WlNJNkltbGtJaXdpWVhWMGFGOTBhVzFsSWpveE56YzJORE15TlRBM0xDSmxlSEFpT2pFM056WTBNell4TURjc0ltbGhkQ0k2TVRjM05qUXpNalV3Tnl3aVptRnRhV3g1WDI1aGJXVWlPaUpNWlhCcGMzVER0aUlzSW1wMGFTSTZJakJsTXpBNE5URTNMVEprWTJRdE5EbG1OUzFpTURZMkxXSmhOVFE0WVdFek5UTmxOU0lzSW1WdFlXbHNJam9pWW1WdWFtRnRhVzR1YkdWd2FYTjBiMEJ0WlhSeWIzQnZiR2xoTG1acEluMC5ERmxZcVJKYUlDRlVub1VMUGVtTDk5RGJOeHUwNkl1eDNZWkJhWjBWMzJNUDVJMEEzb2VSdmY0UndwZll3czFvMGFNc0gtN1NCZ1NrZk14SWtGNGtGaktuaXEzYW5SLVhTdXdCYnFObndyMTdkTGctSmdiRHJaZ29rb2xvMW8wUTdaSk9BQkIyOGlUYjdNT1JRSnVoOERDaE9heEMtQTc5Z3Z4M3FQYzA0MS1xVi1ZbUJnUEVCTWhWNzIxa3JrQTFjUFZ1MS00VklRWlVfSlNIT3JpU1ctc1JzTEVuRkdxeVhacmZJOENacnh1V0NhVXJuSHRwR2xQdXNMLWZRRk03NElnalhvZ3U4eTZYM0llZkJ5Y3NaSVd5NUJ0aTVYazlVNlhpUEItMlZJVHJiQjZjdFlRSWoyTk1qSHlGSzNsdk1ya2ZKZF9mVzJpNnVLdWtFRGxJVEEiLCJpYXQiOjE3NzY0MzI1MDcsImV4cCI6MTc3NjUxODkwN30.GDEZCr5cGs8FSqb3uL3N0J_2Snt6ZAA63OLW5ecIm-E"} 
+ </msg>
+<msg time="2026-04-17T16:28:27.729254" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>backend</arg>
+<arg>/users/login</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-04-17T16:28:26.950459" elapsed="0.778813"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${resp}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-04-17T16:28:27.729417" elapsed="0.000136"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-04-17T16:28:27.730121" level="INFO">${token} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjU4LCJrdWJpb3NJZFRva2VuIjoiZXlKcmFXUWlPaUpRVkVSUlVHWkxialUyYlhCNVJVOXBjSFZ4T0dSRlVEQlBlWGxKTVdoMVdsUXdNVkpWZWtkWFVTdFJQU0lzSW1Gc1p5STZJbEpUTWpVMkluMC5...</msg>
+<var>${token}</var>
+<arg>${resp.json()}[token]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-17T16:28:27.729636" elapsed="0.000502"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-04-17T16:28:27.730465" level="INFO">&amp;{headers} = { Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjU4LCJrdWJpb3NJZFRva2VuIjoiZXlKcmFXUWlPaUpRVkVSUlVHWkxialUyYlhCNVJVOXBjSFZ4T0dSRlVEQlBlWGxKTVdoMVdsUXdNVkpWZWtkWFVTdFJQU0lzSW1G...</msg>
+<var>&amp;{headers}</var>
+<arg>Authorization=Bearer ${token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-17T16:28:27.730229" elapsed="0.000253"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-04-17T16:28:27.732943" level="INFO">GET Request : url=http://localhost:3000/api/users/me 
+ path_url=/api/users/me 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjU4LCJrdWJpb3NJZFRva2VuIjoiZXlKcmFXUWlPaUpRVkVSUlVHWkxialUyYlhCNVJVOXBjSFZ4T0dSRlVEQlBlWGxKTVdoMVdsUXdNVkpWZWtkWFVTdFJQU0lzSW1Gc1p5STZJbEpUTWpVMkluMC5leUpoZEY5b1lYTm9Jam9pUkhsNk5HVkVlVmx6ZFZkeWNqSmFVVnAxUjNaclVTSXNJbk4xWWlJNklqZGtaakl5WldGakxUUTRaV1F0TkdFMVppMWlabVU1TFdRM1ltUTBaalZrWlRkaFlpSXNJbVZ0WVdsc1gzWmxjbWxtYVdWa0lqcDBjblZsTENKcGMzTWlPaUpvZEhSd2N6cGNMMXd2WTI5bmJtbDBieTFwWkhBdVpYVXRkMlZ6ZEMweExtRnRZWHB2Ym1GM2N5NWpiMjFjTDJWMUxYZGxjM1F0TVY5MVVXMUJaelExZUhraUxDSmpiMmR1YVhSdk9uVnpaWEp1WVcxbElqb2lOMlJtTWpKbFlXTXRORGhsWkMwMFlUVm1MV0ptWlRrdFpEZGlaRFJtTldSbE4yRmlJaXdpWjJsMlpXNWZibUZ0WlNJNklrSmxibXBoYldsdUlpd2lZWFZrSWpvaU1uSTRNemhsYjJsa01YWmxZakJ4Ym5GbmJqZ3hjV0YxYlRBaUxDSmxkbVZ1ZEY5cFpDSTZJalkzT0dVMlltRm1MVFF4TURVdE5EUmhOaTA0WVRJeExUVTVNak0xTkRVNE1UazVNU0lzSW5SdmEyVnVYM1Z6WlNJNkltbGtJaXdpWVhWMGFGOTBhVzFsSWpveE56YzJORE15TlRBM0xDSmxlSEFpT2pFM056WTBNell4TURjc0ltbGhkQ0k2TVRjM05qUXpNalV3Tnl3aVptRnRhV3g1WDI1aGJXVWlPaUpNWlhCcGMzVER0aUlzSW1wMGFTSTZJakJsTXpBNE5URTNMVEprWTJRdE5EbG1OUzFpTURZMkxXSmhOVFE0WVdFek5UTmxOU0lzSW1WdFlXbHNJam9pWW1WdWFtRnRhVzR1YkdWd2FYTjBiMEJ0WlhSeWIzQnZiR2xoTG1acEluMC5ERmxZcVJKYUlDRlVub1VMUGVtTDk5RGJOeHUwNkl1eDNZWkJhWjBWMzJNUDVJMEEzb2VSdmY0UndwZll3czFvMGFNc0gtN1NCZ1NrZk14SWtGNGtGaktuaXEzYW5SLVhTdXdCYnFObndyMTdkTGctSmdiRHJaZ29rb2xvMW8wUTdaSk9BQkIyOGlUYjdNT1JRSnVoOERDaE9heEMtQTc5Z3Z4M3FQYzA0MS1xVi1ZbUJnUEVCTWhWNzIxa3JrQTFjUFZ1MS00VklRWlVfSlNIT3JpU1ctc1JzTEVuRkdxeVhacmZJOENacnh1V0NhVXJuSHRwR2xQdXNMLWZRRk03NElnalhvZ3U4eTZYM0llZkJ5Y3NaSVd5NUJ0aTVYazlVNlhpUEItMlZJVHJiQjZjdFlRSWoyTk1qSHlGSzNsdk1ya2ZKZF9mVzJpNnVLdWtFRGxJVEEiLCJpYXQiOjE3NzY0MzI1MDcsImV4cCI6MTc3NjUxODkwN30.GDEZCr5cGs8FSqb3uL3N0J_2Snt6ZAA63OLW5ecIm-E'} 
+ body=None 
+ </msg>
+<msg time="2026-04-17T16:28:27.733010" level="INFO">GET Response : url=http://localhost:3000/api/users/me 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '1308', 'ETag': 'W/"51c-NBKO4ekbERKIfbN+xdcr2qRRyIw"', 'Date': 'Fri, 17 Apr 2026 13:28:27 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"user":{"user_id":58,"username":"benjamin.lepisto@metropolia.fi","email":"benjamin.lepisto@metropolia.fi","created_at":"2026-04-11T15:35:22.000Z"},"kubios_token":"eyJraWQiOiJQVERRUGZLbjU2bXB5RU9pcHVxOGRFUDBPeXlJMWh1WlQwMVJVekdXUStRPSIsImFsZyI6IlJTMjU2In0.eyJhdF9oYXNoIjoiRHl6NGVEeVlzdVdycjJaUVp1R3ZrUSIsInN1YiI6IjdkZjIyZWFjLTQ4ZWQtNGE1Zi1iZmU5LWQ3YmQ0ZjVkZTdhYiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtd2VzdC0xLmFtYXpvbmF3cy5jb21cL2V1LXdlc3QtMV91UW1BZzQ1eHkiLCJjb2duaXRvOnVzZXJuYW1lIjoiN2RmMjJlYWMtNDhlZC00YTVmLWJmZTktZDdiZDRmNWRlN2FiIiwiZ2l2ZW5fbmFtZSI6IkJlbmphbWluIiwiYXVkIjoiMnI4Mzhlb2lkMXZlYjBxbnFnbjgxcWF1bTAiLCJldmVudF9pZCI6IjY3OGU2YmFmLTQxMDUtNDRhNi04YTIxLTU5MjM1NDU4MTk5MSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNzc2NDMyNTA3LCJleHAiOjE3NzY0MzYxMDcsImlhdCI6MTc3NjQzMjUwNywiZmFtaWx5X25hbWUiOiJMZXBpc3TDtiIsImp0aSI6IjBlMzA4NTE3LTJkY2QtNDlmNS1iMDY2LWJhNTQ4YWEzNTNlNSIsImVtYWlsIjoiYmVuamFtaW4ubGVwaXN0b0BtZXRyb3BvbGlhLmZpIn0.DFlYqRJaICFUnoULPemL99DbNxu06Iux3YZBaZ0V32MP5I0A3oeRvf4RwpfYws1o0aMsH-7SBgSkfMxIkF4kFjKniq3anR-XSuwBbqNnwr17dLg-JgbDrZgokolo1o0Q7ZJOABB28iTb7MORQJuh8DChOaxC-A79gvx3qPc041-qV-YmBgPEBMhV721krkA1cPVu1-4VIQZU_JSHOriSW-sRsLEnFGqyXZrfI8CZrxuWCaUrnHtpGlPusL-fQFM74IgjXogu8y6X3IefBycsZIWy5Bti5Xk9U6XiPB-2VITrbB6ctYQIj2NMjHyFK3lvMrkfJd_fW2i6uKukEDlITA"} 
+ </msg>
+<msg time="2026-04-17T16:28:27.733084" level="INFO">${resp_me} = &lt;Response [200]&gt;</msg>
+<var>${resp_me}</var>
+<arg>backend</arg>
+<arg>/users/me</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-04-17T16:28:27.730558" elapsed="0.002540"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${resp_me}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-04-17T16:28:27.733227" elapsed="0.000194"/>
+</kw>
+<status status="PASS" start="2026-04-17T16:28:26.949985" elapsed="0.783578"/>
+</test>
+<status status="PASS" start="2026-04-17T16:28:26.829669" elapsed="0.904151"/>
 </suite>
 <statistics>
 <total>
